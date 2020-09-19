@@ -1,4 +1,4 @@
-package sda.finalProject.Budget.user;
+package sda.finalProject.Budget.entity;
 
 import lombok.Getter;
 import lombok.Setter;
