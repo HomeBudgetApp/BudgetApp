@@ -1,7 +1,7 @@
 # BudgetApp
 Apka służąca do kontrolowania budżetu domowego
 Użyte technologie podczas tworzenia Apki:
-- java,
+- JAVA,
 - Spring,
 -Unicorn without horn
 
