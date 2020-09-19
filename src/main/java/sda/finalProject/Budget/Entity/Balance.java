@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Data
-public class Saldo {
+public class Balance {
     private BigDecimal balance;
     private List<Transaction> transactionList;
 }
