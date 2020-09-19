@@ -29,7 +29,7 @@ public class RegistrationController {
 
     @RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
     public ModelAndView addUser(HttpServletRequest request, HttpServletResponse respone, @ModelAttribute("user") User user) {
-    userService.register(user);
-    return new ModelAndView("welcome", "firstname",user.getFirstname());
+        userService.register(user);
+        return new ModelAndView("welcome", "firstname", user.getFirstname());
     }
 }
