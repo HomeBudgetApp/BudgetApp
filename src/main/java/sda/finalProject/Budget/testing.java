@@ -1,4 +1,4 @@
 package sda.finalProject.Budget;
 
-public class test {
+public class testing {
 }
