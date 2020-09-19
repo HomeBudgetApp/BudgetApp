@@ -1,11 +1,16 @@
-package sda.finalProject.Budget.Entity;
+package sda.finalProject.Budget.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
+@Entity
+@NoArgsConstructor
+@Getter
 public class Transaction {
     private String description;
     private BigDecimal value;
