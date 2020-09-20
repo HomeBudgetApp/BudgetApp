@@ -2,40 +2,38 @@ package sda.finalProject.Budget.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import sda.finalProject.Budget.dto.LoginDTO;
+import sda.finalProject.Budget.entity.User;
+import sda.finalProject.Budget.repository.UserRepository;
+import sda.finalProject.Budget.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
+@RequestMapping("/login")
 public class LoginController {
 
-    @Autowired
-    UserService userService;
+    private final UserRepository userRepository;
+    private final UserService userService;
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response){
+    public LoginController(UserRepository userRepository, UserService userService) {
+        this.userRepository = userRepository;
+        this.userService = userService;
+    }
+
+    @GetMapping
+    ModelAndView loginPage() {
         ModelAndView mnv = new ModelAndView("login");
-        mnv.addObject("login",new Login());
-
+        mnv.addObject("form", new LoginDTO());
         return mnv;
     }
 
-    @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
-    public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse respone, @ModelAttribute("login", Login login)){
-    ModelAndView mnv = null;
+    @PostMapping
+    String loginToPage() {
 
-    User user = userService.validateUser(login);
-     if(null != null){
-         mnv = new ModelAndView("welcome");
-         mnv.addObject("firstname", user.getFirstname());
-     }else{
-         mnv = new ModelAndView("login");
-         mnv.addObject("message", "User or passwors is wrong!");
-     }
-     return mnv;
+        return "redirect:/";
     }
 }

@@ -16,8 +16,8 @@ public class User {
     private String username;
     private BigDecimal balance;
     private String password;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String email;
     private String phone;
 
@@ -25,8 +25,8 @@ public class User {
         this.username = username;
         this.balance = balance;
         this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstname;
+        this.lastName = lastname;
         this.email = email;
         this.phone = phone;
     }
