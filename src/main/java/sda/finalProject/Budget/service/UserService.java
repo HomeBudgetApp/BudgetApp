@@ -16,7 +16,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
     public void createUser(NewUserDTO newUserDTO){
-User newUser = new User(newUserDTO.getLogin(), newUserDTO.getPassword());
+User newUser = new User(newUserDTO.getLogin(),newUserDTO.getBalance(), newUserDTO.getPassword(), newUserDTO.getFirstName(), newUserDTO.getLastName(), newUserDTO.getEmail(), newUserDTO.getPhone());
 userRepository.save(newUser);
     }
 }

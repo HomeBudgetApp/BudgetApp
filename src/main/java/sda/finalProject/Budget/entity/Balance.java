@@ -1,6 +1,5 @@
 package sda.finalProject.Budget.entity;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -8,6 +7,7 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,8 +15,8 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class Balance {
-    private BigDecimal balance;
-    private List<Transaction> transactionList;
+    private BigDecimal accountBalance;
+    private List<Transaction> transactionList = new ArrayList<>();
     private Long id;
 
     public void setId(Long id) {
@@ -26,5 +26,9 @@ public class Balance {
     @Id
     public Long getId() {
         return id;
+    }
+
+    public Balance(BigDecimal accountBalance) {
+        this.accountBalance = accountBalance;
     }
 }
