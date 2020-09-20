@@ -1,8 +1,8 @@
-package sda.finalProject.Budget.Controller;
+package sda.finalProject.Budget.dto;
 
 import org.apache.tomcat.jni.User;
 
-public class Login {
+public class LoginDTO {
 
     private String username;
     private String password;
