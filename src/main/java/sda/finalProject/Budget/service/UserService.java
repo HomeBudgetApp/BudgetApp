@@ -3,7 +3,7 @@ package sda.finalProject.Budget.service;
 import org.springframework.stereotype.Service;
 import sda.finalProject.Budget.dto.NewUserDTO;
 import sda.finalProject.Budget.repository.UserRepository;
-import sda.finalProject.Budget.entity.User;
+import sda.finalProject.Budget.entity.UserEntity;
 
 import javax.transaction.Transactional;
 
@@ -16,7 +16,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
     public void createUser(NewUserDTO newUserDTO){
-User newUser = new User(newUserDTO.getLogin(),newUserDTO.getBalance(), newUserDTO.getPassword(), newUserDTO.getFirstName(), newUserDTO.getLastName(), newUserDTO.getEmail(), newUserDTO.getPhone());
-userRepository.save(newUser);
+UserEntity newUserEntity = new UserEntity(newUserDTO.getLogin(), newUserDTO.getPassword(), newUserDTO.getFirstName(), newUserDTO.getLastName(), newUserDTO.getEmail(), newUserDTO.getPhone());
+userRepository.save(newUserEntity);
     }
 }

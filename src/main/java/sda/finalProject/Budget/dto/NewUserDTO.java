@@ -1,7 +1,6 @@
 package sda.finalProject.Budget.dto;
 
 import lombok.Data;
-import sda.finalProject.Budget.entity.Balance;
 
 import java.math.BigDecimal;
 

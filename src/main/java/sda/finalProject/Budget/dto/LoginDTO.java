@@ -1,7 +1,9 @@
 package sda.finalProject.Budget.dto;
 
+import lombok.Data;
 import org.apache.tomcat.jni.User;
 
+@Data
 public class LoginDTO {
 
     private String username;
