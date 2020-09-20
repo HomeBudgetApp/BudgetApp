@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 
 @Data
 public class NewUserDTO {
+
     private String login;
     private String password;
     private String repeatedPassword;

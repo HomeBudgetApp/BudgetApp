@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<head>
+    <meta charset="UTF-8">
+    <title>registrartion</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+
+<body>
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form action="/action_page.php">
+
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Billing Address</h3>
+                        <label for="fname"><i class="User"></i> first name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="first name">
+                        <label for="lname"><i class="User"></i> last name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="last name">
+                        <label for="email"><i class="User"></i> Email</label>
+                        <input type="text" id="email" name="email" placeholder="name@example.com">
+                        <label for="phone"><i class="User"></i> Phone</label>
+                        <input type="text" id="phone" name="phone" placeholder="XXX-XXX-XXX">
+                </div>
+                <button type="submit" value="Continue to checkout" class="btn">
+                </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<body>
