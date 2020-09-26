@@ -50,10 +50,20 @@
                             <input class="form-control" type="text" th:field="*{lastName}"/>
                             <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last name Error</div>
                     </div>
+                    <div class="col-md-6 mb-3">
+                            <label>Email</label>
+                            <input class="form-control" type="text" th:field="*{email}"/>
+                            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                            <label>Phone</label>
+                            <input class="form-control" type="text" th:field="*{phone}"/>
+                            <div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone Error</div>
+                    </div>
                 </div>
 
                 <div class="mb3">
-                    <label>Login</label> q
+                    <label>Login</label>
                     <input class="form-control" type="text" th:field="*{login}"/>
                     <div th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Name Error</div>
                 </div>
