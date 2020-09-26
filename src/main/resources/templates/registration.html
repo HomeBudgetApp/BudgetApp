@@ -13,10 +13,10 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
-    <script src="dashboard.js"></script>
+    <script src="../static/js/dashboard.js"></script>
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="form-validation.css" rel="stylesheet">
+    <link href="../static/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/styles/form-validation.css" rel="stylesheet">
 
     <style>
 
@@ -27,9 +27,22 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
+    <link th:href="@{/styles/form-validation.css}" rel="stylesheet"type="text/css"/>
+    <link th:href="@{/styles/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body class="bg-light">
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Was Five, Now We Are Three</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+    </ul>
+</nav>
 <div class="container">
     <div class="py-5 text-center">
 
