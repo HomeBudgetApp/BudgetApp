@@ -7,19 +7,16 @@
 <head>
     <meta charset="UTF-8">
     <title>registration</title>
-</head>
-<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Checkout example · Bootstrap</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
-
+    <script src="dashboard.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="form-validation.css" rel="stylesheet">
 
     <style>
 
@@ -56,7 +53,7 @@
                 </div>
 
                 <div class="mb3">
-                    <label>Login</label>
+                    <label>Login</label> q
                     <input class="form-control" type="text" th:field="*{login}"/>
                     <div th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Name Error</div>
                 </div>
