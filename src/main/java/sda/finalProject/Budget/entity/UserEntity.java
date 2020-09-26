@@ -15,15 +15,15 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String login;
+    private String username;
     private String password;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
 
-    public UserEntity(String login, String password, String firstname, String lastname, String email, String phone) {
-        this.login = login;
+    public UserEntity(String username, String password, String firstname, String lastname, String email, String phone) {
+        this.username = username;
         this.password = password;
         this.firstName = firstname;
         this.lastName = lastname;
