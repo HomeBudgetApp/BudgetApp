@@ -15,8 +15,9 @@ public class UserService {
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    public void createUser(NewUserDTO newUserDTO){
-UserEntity newUserEntity = new UserEntity(newUserDTO.getLogin(), newUserDTO.getPassword(), newUserDTO.getFirstName(), newUserDTO.getLastName(), newUserDTO.getEmail(), newUserDTO.getPhone());
-userRepository.save(newUserEntity);
+
+    public void createUser(NewUserDTO newUserDTO) {
+        UserEntity newUserEntity = new UserEntity(newUserDTO.getLogin(), newUserDTO.getPassword(), newUserDTO.getFirstName(), newUserDTO.getLastName(), newUserDTO.getEmail(), newUserDTO.getPhone());
+        userRepository.save(newUserEntity);
     }
 }

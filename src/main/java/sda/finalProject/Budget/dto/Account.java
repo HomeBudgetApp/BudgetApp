@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+
 @Data
 public class Account {
 
@@ -31,13 +32,13 @@ public class Account {
         this.balance = balance;
         this.transactionEntityList = transactionEntityList;
     }
-    public void addTransaction (NewTransactionDTO newTransactionDTO){
-        if(newTransactionDTO.getCategory() != null && newTransactionDTO.getDescription() != null && newTransactionDTO.getId() != null && newTransactionDTO.getTransactionDate() != null)
+    public void addTransaction (TransactionDTO transactionDTO){
+        if(transactionDTO.getCategory() != null && transactionDTO.getDescription() != null && transactionDTO.getId() != null && transactionDTO.getTransactionDate() != null)
         {
-        TransactionEntity transactionEntity = new TransactionEntity(newTransactionDTO.getDescription(),
-                newTransactionDTO.getValue(),
-                newTransactionDTO.getTransactionDate(),
-                newTransactionDTO.getCategory());
+        TransactionEntity transactionEntity = new TransactionEntity(transactionDTO.getDescription(),
+                transactionDTO.getValue(),
+                transactionDTO.getTransactionDate(),
+                transactionDTO.getCategory());
         transactionEntityList.add(transactionEntity);
     }
         throw new RuntimeException("xxx");
