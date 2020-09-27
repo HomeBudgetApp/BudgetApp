@@ -19,6 +19,6 @@ public class TransactionService implements TransactionRepository {
 
     @Override
     public Optional<TransactionEntity> findById(Long Id) {
-        return Optional.of(Id).filter(t -> t.getId() == id).stream().collect().
+        return Optional.of(Id).stream().filter(a->a.)
     }
 }
