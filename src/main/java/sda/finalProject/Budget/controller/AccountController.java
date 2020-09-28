@@ -17,10 +17,10 @@ public class AccountController {
     @RequestMapping(method = RequestMethod.GET)
     ModelAndView transactionTable() {
         ModelAndView mnv = new ModelAndView("index");
-        mnv.addObject("transaction.id", transactionService.)
-        mnv.addObject("transaction.description", transactionService.)
-        mnv.addObject("transaction.value", transactionService.)
-        mnv.addObject("transaction.categorie", transactionService.)
+        mnv.addObject("transaction.id", transactionService.getTransactionList(userId).get().getId());
+        mnv.addObject("transaction.description", transactionService.getTransactionList(userId).get().getDescription());
+        mnv.addObject("transaction.value", transactionService.getTransactionList(userId).get().getValue())
+        mnv.addObject("transaction.categorie", transactionService.getTransactionList(userId).get().getCategory());
         return mnv;
     }
 }
