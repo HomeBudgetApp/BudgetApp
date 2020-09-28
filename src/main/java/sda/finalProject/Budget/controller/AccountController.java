@@ -19,7 +19,7 @@ public class AccountController {
         ModelAndView mnv = new ModelAndView("index");
         mnv.addObject("transaction.id", transactionService.getTransactionList(userId).get().getId());
         mnv.addObject("transaction.description", transactionService.getTransactionList(userId).get().getDescription());
-        mnv.addObject("transaction.value", transactionService.getTransactionList(userId).get().getValue())
+        mnv.addObject("transaction.value", transactionService.getTransactionList(userId).get().getValue());
         mnv.addObject("transaction.categorie", transactionService.getTransactionList(userId).get().getCategory());
         return mnv;
     }
