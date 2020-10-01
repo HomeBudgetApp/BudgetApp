@@ -2,12 +2,21 @@ package sda.finalProject.Budget.dto;
 
 import lombok.Data;
 import sda.finalProject.Budget.categories.Categories;
+import sda.finalProject.Budget.repository.AccountRepository;
+import sda.finalProject.Budget.repository.TransactionRepository;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 public class TransactionDTO {
+
+    private TransactionRepository transactionRepository;
+
+    public TransactionDTO(TransactionRepository  transactionRepository) {
+        this.transactionRepository = transactionRepository;
+    }
+
     private Long id;
     private String description;
     private BigDecimal value;
@@ -22,5 +31,7 @@ public class TransactionDTO {
         this.category = category;
     }
 
-
+    public Long getId() {
+        return id;
+    }
 }
