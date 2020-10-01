@@ -9,24 +9,6 @@
     <title>chose</title>
 </head>
 <body>
-<div layout:fragment="content">
-    <th:block th:each="transaction : ${transactions}">
-        <tr>
-            <td th:text="${transaction.id}"></td>
-            <td th:text="${transaction.name}"></td>
-            <td th:test="${transaction.description}"></td>
-            <td th:test="${transaction.value}"></td>
-            <td th:test="${transaction.date}"></td>
-            <td>
-                <a th:href="@{'/index/addTransaction?id=' + ${transaction.id}}">Add</a>
-            </td>
-        </tr>
-    </th:block>
 
-    <form th:object="${newTransaction}" method="post" th:action="@{/transactions}">
-        <input th:field="*{name}">
-        <button th:type="submit">Add</button>
-    </form>
-</div>
 </body>
 </html>

@@ -10,6 +10,7 @@ import sda.finalProject.Budget.repository.TransactionRepository;
 import java.math.BigDecimal;
 import java.security.Key;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -19,7 +20,7 @@ import java.util.stream.Collectors;
 @Service
 public class TransactionService{
 
-    private Map<Key,TransactionEntity> transactionMap;
+
 
     private final TransactionRepository transactionRepository;
 
@@ -27,9 +28,8 @@ public class TransactionService{
         this.transactionRepository = transactionRepository;
     }
 
-    public List<TransactionEntity> getTransactionList(Long userId) {
-        Optional<TransactionEntity> byUserId = transactionRepository.findById(userId);
-        List<TransactionEntity> transactionEntityList = byUserId.stream().filter(a->a.getValue().compareTo(BigDecimal.valueOf(0)) == 1).collect(Collectors.toList());
-        return transactionEntityList;
+    public List<TransactionEntity> getTransactionList() {
+        List<TransactionEntity> transactionEntityList2 = transactionRepository.findAll().stream().collect(Collectors.toList());
+        return transactionEntityList2;
     }
 }
