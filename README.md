@@ -6,13 +6,13 @@ BudgetApp is an application for storing information about home budget. Might be 
 
 ## Links to the appliaction
 
--Registration page
+- Registration page
 https://budeget.herokuapp.com/registration
 
--Login page
+- Login page
 https://budeget.herokuapp.com/login#
 
--Home page
+- Home page
 https://budeget.herokuapp.com
 
 ## Usage
