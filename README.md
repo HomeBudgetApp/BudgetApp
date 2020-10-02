@@ -50,7 +50,9 @@ https://budeget.herokuapp.com
 
 - Bootstrap
 
-- Spring 
+- Spring
+
+- Spring Security
 
 - Spring Data
 
