@@ -46,7 +46,7 @@ https://budeget.herokuapp.com
 
 - CSS
 
-- html
+- HTML
 
 - Bootstrap
 
