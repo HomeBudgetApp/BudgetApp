@@ -1,45 +1,107 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+>
     <head>
         <meta charset="utf-8" />
     </head>
     <body>
-        <div th:fragment="navbar">
-            <nav class="navbar navbar-default main-menu">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" th:href="@{/}">Spring Boot Web Application</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- Lang [BEGIN]-->
-                    <ul class="nav navbar-nav">
-                        <li><a th:href="@{/}">Home</a></li>
-                    </ul>
-                    <!-- Lang [END]-->
-                    <!-- Menu [BEGIN] -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
-                            <ul class="dropdown-menu" sec:authorize="isAnonymous()">
-                                <li><a href="#" th:href="@{/}" th:inline="text">[[#{menu.mainPage}]]</a></li>
-                                <li><a href="#" th:href="@{/registration}" th:inline="text">[[#{menu.createAccount}]]</a></li>
-                                <li><a href="#" th:href="@{/login}" th:inline="text">[[#{menu.loginPage}]]</a></li>
-                            </ul>
-                            <ul class="dropdown-menu" sec:authorize="isAuthenticated()">
-                                <li><a href="#" th:href="@{/}">[[#{menu.mainPage}]]</a></li>
-                                <li><a href="#" th:href="@{/profile}">[[#{menu.profile}]]</a></li>
-                                <li><a href="#" th:href="@{/logout}">[[#{menu.logout}]]</a></li>
-                            </ul></li>
-                    </ul>
-                    <!-- Menu [END] -->
-                </div>
-            </nav>
+    <div th:fragment="navbar">
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#" th:href="@{/}">Was Five, Now We Are Three</a>
+            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+                    data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="#" th:href="@{/logout}">Sign out</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="sidebar-sticky pt-3">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" th:href="@{/}">
+                                    <span data-feather="home"></span>
+                                    Dashboard <span class="sr-only"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" th:href="@{/login}" th:inline="text">
+                                    <span data-feather="users"></span>
+                                    Login
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" th:href="@{/registration}" th:inline="text">
+                                    <span data-feather="users"></span>
+                                    Registration
+                                </a>
+                            </li>
+
+                            <!--                    <li class="nav-item">-->
+                            <!--                        <a class="nav-link" href="#">-->
+                            <!--                            <span data-feather="bar-chart-2"></span>-->
+                            <!--                            Reports-->
+                            <!--                        </a>-->
+                            <!--                    </li>-->
+                            <!--                    <li class="nav-item">-->
+                            <!--                        <a class="nav-link" href="#">-->
+                            <!--                            <span data-feather="layers"></span>-->
+                            <!--                            Integrations-->
+                            <!--                        </a>-->
+                            <!--                    </li>-->
+                        </ul>
+
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Saved reports</span>
+                            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                                <span data-feather="plus-circle"></span>
+                            </a>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" th:href="@{/addTransaction}" th:inline="text">
+                                    <span data-feather="bar-chart-2"></span>
+                                    Add transaction
+                                </a>
+                            </li>
+                            <!--                    <li class="nav-item">-->
+                            <!--                        <a class="nav-link" href="#">-->
+                            <!--                            <span data-feather="file-text"></span>-->
+                            <!--                            Current month-->
+                            <!--                        </a>-->
+                            <!--                    </li>-->
+                            <!--                    <li class="nav-item">-->
+                            <!--                        <a class="nav-link" href="#">-->
+                            <!--                            <span data-feather="file-text"></span>-->
+                            <!--                            Last quarter-->
+                            <!--                        </a>-->
+                            <!--                    </li>-->
+                            <!--                    <li class="nav-item">-->
+                            <!--                        <a class="nav-link" href="#">-->
+                            <!--                            <span data-feather="file-text"></span>-->
+                            <!--                            Social engagement-->
+                            <!--                        </a>-->
+                            <!--                    </li>-->
+                            <!--                    <li class="nav-item">-->
+                            <!--                        <a class="nav-link" href="#">-->
+                            <!--                            <span data-feather="file-text"></span>-->
+                            <!--                            Year-end sale-->
+                            <!--                        </a>-->
+                            <!--                    </li>-->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
         </div>
     </body>
 </html>

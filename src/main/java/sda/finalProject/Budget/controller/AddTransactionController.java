@@ -1,32 +1,23 @@
 package sda.finalProject.Budget.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import sda.finalProject.Budget.dto.NewTransactionDTO;
-import sda.finalProject.Budget.exception.UserLoginExistException;
 import sda.finalProject.Budget.service.TransactionService;
-import sda.finalProject.Budget.validators.NewTransactionValidator;
+
+import java.math.BigDecimal;
 
 @Controller
 @RequestMapping("/addTransaction")
 public class AddTransactionController {
     private final TransactionService transactionService;
-    private final NewTransactionValidator newTransactionValidator;
 
-    public AddTransactionController(TransactionService transactionService, NewTransactionValidator newTransactionValidator) {
+    public AddTransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
-        this.newTransactionValidator = newTransactionValidator;
     }
-
-    @InitBinder
-    void init(WebDataBinder binder) {
-        binder.setValidator(newTransactionValidator);
-    }
-
 
     @GetMapping
     ModelAndView addTransactionPage() {
@@ -36,16 +27,12 @@ public class AddTransactionController {
     }
 
     @PostMapping
-    ModelAndView createNewTransaction(@ModelAttribute("addTransaction") @Validated NewTransactionDTO newTransactionDTO,
-                                      BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return new ModelAndView("addTransaction");
-        }
-        try {
+    ModelAndView createNewTransaction(NewTransactionDTO newTransactionDTO) {
+        if (newTransactionDTO.getValue().compareTo(BigDecimal.valueOf(0L)) > 0) {
             transactionService.createTransaction(newTransactionDTO);
-        } catch (UserLoginExistException e) {
+        } else {
             ModelAndView mnv = new ModelAndView("addTransaction");
-            mnv.addObject("error", e.getMessage());
+            mnv.addObject("error", "Value must be higher than zero.");
             return mnv;
         }
         return new ModelAndView("redirect:/addTransaction");
