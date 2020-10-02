@@ -9,7 +9,7 @@ BudgetApp is an application for storing information about home budget. Might be 
 -Registration page
 https://budeget.herokuapp.com/registration
 
-_Login page
+-Login page
 https://budeget.herokuapp.com/login#
 
 -Home page
@@ -39,14 +39,22 @@ https://budeget.herokuapp.com
 ```
 
 ## Used technologies
--Java
--Java script
--CSS
--html
--Bootstrap
--Spring 
--Spring Data
--Postrge Database
+
+- Java
+
+- Java script
+
+- CSS
+
+- html
+
+- Bootstrap
+
+- Spring 
+
+- Spring Data
+
+- PostrgeSQL Database
 
 
 
