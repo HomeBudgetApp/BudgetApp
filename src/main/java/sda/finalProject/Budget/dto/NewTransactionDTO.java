@@ -8,17 +8,8 @@ import java.time.LocalDateTime;
 
 @Data
 public class NewTransactionDTO {
-    private Long id;
     private String description;
     private BigDecimal value;
-    private LocalDateTime transactionDate;
+    private LocalDateTime transactionDate = LocalDateTime.now();
     private Categories category;
-
-    public NewTransactionDTO(Long id, String description, BigDecimal value, LocalDateTime transactionDate, Categories category) {
-        this.id = id;
-        this.description = description;
-        this.value = value;
-        this.transactionDate = transactionDate;
-        this.category = category;
-    }
 }

@@ -13,4 +13,6 @@ Optional<UserEntity> findByEmail(String email);
 Optional<UserEntity> findByLogin(String login);
 boolean existsByLogin(String login);
 
+    void deleteById(Long id);
+
 }

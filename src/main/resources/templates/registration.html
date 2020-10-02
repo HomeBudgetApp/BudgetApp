@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+    <script src="../static/js/dashboard.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="../static/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/styles/form-validation.css" rel="stylesheet">
+
+    <style>
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link th:href="@{/styles/form-validation.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/styles/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Was Five, Now We Are Three</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+            data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="py-5 text-center">
+
+        <h2>Registration form</h2>
+
+    </div>
+    <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Registration</h4>
+        <form class="needs-validation" novalidate th:action="@{/registration}" th:object="${registration}"
+              method="post">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>First name</label>
+                    <input class="form-control" type="text" th:field="*{firstName}"/>
+                    <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First name Error</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Last name</label>
+                    <input class="form-control" type="text" th:field="*{lastName}"/>
+                    <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last name Error</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Email</label>
+                    <input class="form-control" type="text" th:field="*{email}"/>
+                    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Phone</label>
+                    <input class="form-control" type="text" th:field="*{phone}"/>
+                    <div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Phone Error</div>
+                </div>
+            </div>
+
+            <div class="mb3">
+                <label>Login</label>
+                <input class="form-control" type="text" th:field="*{login}"/>
+                <div th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Name Error</div>
+            </div>
+            <div class="mb3">
+                <label>Password</label>
+                <input class="form-control" type="password" th:field="*{password}"/>
+                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Name Error</div>
+            </div>
+            <div class="mb3">
+                <label>Repeat password</label>
+                <input class="form-control" type="password" th:field="*{repeatedPassword}"/>
+                <div th:if="${#fields.hasErrors('repeatedPassword')}" th:errors="*{repeatedPassword}">Name Error</div>
+            </div>
+            <div>
+                <button th:type="submit">Register</button>
+                <button th:type="reset">Clean</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>

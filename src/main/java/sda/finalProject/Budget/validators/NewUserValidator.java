@@ -26,5 +26,17 @@ public class NewUserValidator implements Validator {
         if (StringUtils.isBlank(newUserDTO.getRepeatedPassword())) {
             errors.rejectValue("repeatedPassword", "validator.field.blank");
         }
+        if (StringUtils.isBlank(newUserDTO.getLogin())) {
+            errors.rejectValue("firstName", "validator.field.blank");
+        }
+        if (StringUtils.isBlank(newUserDTO.getLogin())) {
+            errors.rejectValue("lastName", "validator.field.blank");
+        }
+        if (StringUtils.isBlank(newUserDTO.getLogin())) {
+            errors.rejectValue("email", "validator.field.blank");
+        }
+        if (StringUtils.isBlank(newUserDTO.getLogin())) {
+            errors.rejectValue("phone", "validator.field.blank");
+        }
     }
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" th:href="@{/styles/login.css}">
+    <link th:href="@{/styles/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Was Five, Now We Are Three</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+            data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="container">
+    <form action="/login" method="post">
+        <label for="username"><b>Username</b></label>
+        <input id="username" type="text" placeholder="Enter Username" name="username" required>
+
+        <label for="password"><b>Password</b></label>
+        <input id="password" type="password" placeholder="Enter Password" name="password" required>
+
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+
+        <div class="container" style="background-image: url(layout/);">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+</body>
+</html>

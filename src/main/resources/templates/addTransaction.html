@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<head>
+    <title>index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/styles/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#" th:href="@{/}">Was Five, Now We Are Three</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+            data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#" th:href="@{/logout}">Sign out</a>
+        </li>
+    </ul>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" th:href="@{/}">
+                            <span data-feather="home"></span>
+                            Dashboard <span class="sr-only"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{/login}" th:inline="text">
+                            <span data-feather="users"></span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{/registration}" th:inline="text">
+                            <span data-feather="users"></span>
+                            Registration
+                        </a>
+                    </li>
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a class="nav-link" href="#">-->
+                    <!--                            <span data-feather="bar-chart-2"></span>-->
+                    <!--                            Reports-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a class="nav-link" href="#">-->
+                    <!--                            <span data-feather="layers"></span>-->
+                    <!--                            Integrations-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
+                </ul>
+            </div>
+        </nav>
+        <div>
+
+            <form class="needs-validation" novalidate th:action="@{/addTransaction}" th:object="${addTransaction}"
+                  method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>First name</label>
+                        <input class="form-control" type="number" th:field="*{value}"/>
+                        <div th:if="${#fields.hasErrors('value')}" th:errors="*{value}">First name Error</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Category</label>
+                        <input class="form-control" type="radio" th:field="*{category}" th:name="category"
+                               th:value="One use"/>
+                        <input class="form-control" type="radio" th:field="*{category}" th:name="category"
+                               th:value="Ratal"/>
+                        <input class="form-control" type="radio" th:field="*{category}" th:name="category"
+                               th:value="Permitted"/>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Description</label>
+                        <input class="form-control" type="text" th:field="*{description}"
+                               style="height-min:100px;width-min:300px;"/>
+                    </div>
+
+                    <div>
+                        <button th:type="submit">Register</button>
+                        <button th:type="reset">Clean</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
