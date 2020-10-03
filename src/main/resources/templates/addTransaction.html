@@ -15,6 +15,7 @@
 
     <!-- Bootstrap core CSS -->
     <link th:href="@{/styles/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/styles/login.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -122,18 +123,11 @@
                         <input class="form-control" type="text" th:field="*{value}"/>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="category">Category</label>
-                        <select id="category" th:name="category">
-                            <option class="form-control" type="radio" th:field="*{category}" th:name="category"
-                                    th:value="ONEUSECATEGORY">One use
-                            </option>
-                            <option class="form-control" type="radio" th:field="*{category}" th:name="category"
-                                    th:value="RATALCATEGORY">Ratal
-                            </option>
-                            <option class="form-control" type="radio" th:field="*{category}" th:name="category"
-                                    th:value="PERMITTEDCATEGORY">Permitted
-                            </option>
-                        </select>
+                            <label>Category</label>
+                            <input class="form-control" type="radio" th:field="*{category}" th:name="category"
+                                   th:value="INCOME">
+                            <input class="form-control" type="radio" th:field="*{category}" th:name="category"
+                                    th:value="EXPANSE">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>Description</label>

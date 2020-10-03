@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="layout/layout"
@@ -157,17 +156,19 @@
                         <th>Category</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr th:if="${transactions == empty}">
-                        <td colspan="2"> >Transactions are not available</td>
-                    </tr>
-                    <tr>
+                    <tbody th:if="${transactions != empty}">
+
                     <tr th:each="transaction : ${transactions}">
                         <td><span th:text="${transaction.id}"> Id </span></td>
                         <td><span th:text="${transaction.description}"> Description </span></td>
                         <td><span th:text="${transaction.value}" th:name="transactionValue"> Value </span></td>
                         <td><span th:text="${transaction.transactionDate}"> Value </span></td>
                         <td><span th:text="${transaction.category}"> Category </span></td>
+                    </tr>
+                    </tbody>
+                    <tbody th:if="${transactions == empty}">
+                    <tr>
+                        <td colspan="2"> >Transactions are not available</td>
                     </tr>
                     </tbody>
                 </table>
@@ -183,7 +184,7 @@
         th:src="@{https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js}"></script>
 <script type="text/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/dashboard.js}"></script>
-<script>
+<script th:inline="javascript">
     (function () {
         'use strict'
 
@@ -211,11 +212,7 @@
                     'December',
                 ],
                 datasets: [{
-                    data: [
-                        document.getElementsByName("transactionValue").forEach((value) => {
-                            console.log(value,)
-                        })
-                    ],
+                    data: [],
                     lineTension: 0,
                     backgroundColor: 'transparent',
                     borderColor: '#007bff',

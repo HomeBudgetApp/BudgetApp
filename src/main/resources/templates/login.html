@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-    <link rel="stylesheet" th:href="@{/styles/login.css}">
     <link th:href="@{/styles/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/styles/login.css}" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -104,27 +104,22 @@
                 </ul>
             </div>
         </nav>
+
+        <form th:action="@{/login}" method="post" th:object="${form}">
+            <div class="mb3">
+
+                <label for="username"><b>Login</b></label>
+                <input class="form-control" id="username" type="text" th:field="*{login}" th:name="login" required>
+
+                <label for="password"><b>Password</b></label>
+                <input class="form-control" id="password" th:type="password" th:field="*{password}" th:name="password"
+                       required>
+                <br/>
+                <button style="width:200px; background-color: #e0a800;" type="submit">Login</button>
+                <button style="width:200px; background-color: darkred;" type="reset">Clear</button>
+            </div>
+        </form>
     </div>
-</div>
-
-<div class="container">
-    <form action="/login" method="post">
-        <label for="username"><b>Username</b></label>
-        <input id="username" type="text" placeholder="Enter Username" name="username" required>
-
-        <label for="password"><b>Password</b></label>
-        <input id="password" type="password" placeholder="Enter Password" name="password" required>
-
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-
-        <div class="container" style="background-image: url(layout/);">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-    </form>
 </div>
 </body>
 </html>

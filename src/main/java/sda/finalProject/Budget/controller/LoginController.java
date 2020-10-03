@@ -7,6 +7,7 @@ import sda.finalProject.Budget.dto.LoginDTO;
 import sda.finalProject.Budget.repository.UserRepository;
 import sda.finalProject.Budget.service.UserService;
 
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -28,7 +29,6 @@ public class LoginController {
 
     @PostMapping
     String loginToPage() {
-
         return "redirect:/";
     }
 }

@@ -19,15 +19,15 @@ public class WebAppConfig implements WebMvcConfigurer {
         return sessionLocaleResolver;
     }
 
-    @Bean
-    public LocaleChangeInterceptor localeChangeInterceptor() {
-        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
-        localeChangeInterceptor.setParamName("lang");
-        return localeChangeInterceptor;
-    }
+//    @Bean
+//    public LocaleChangeInterceptor localeChangeInterceptor() {
+//        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
+//        localeChangeInterceptor.setParamName("lang");
+//        return localeChangeInterceptor;
+//    }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(localeChangeInterceptor());
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(localeChangeInterceptor());
+//    }
 }
